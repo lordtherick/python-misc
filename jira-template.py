@@ -5,28 +5,18 @@ from jira import JIRA
 
 def processOpenTicket(jira,issue):
 	print("Place Holder - Open Ticket")
-	# IF CONTRACTOR - TRANSITION TO T&C.
 
 def processAttachTnC(jira,issue):
 	print("Place Holder - Attach TnC")
-
-def processJiraOnboarding(jira,issue):
-	print("Place Holder - Jira Onboarding")
-	# Load all the information you need from the Ticket
-	# Create the user
-	# Transition the issue
-	# Create notice and assign if cannot progress
-
 
 ## Generic Issue processing
 def issueProcessing(jira,issue):
 	key=str(issue.key)
 	status=str(issue.fields.status)
 
-	if status == "Open": processOpenTicket(jira,issue)
-	elif status == "Attach T&Cs": processAttachTnC(jira,issue)
-	elif status == "Jira Onboarding": processJiraOnboarding(jira,issue)
-	else:
+    if status eq "Open": processOpenTicket(jira,issue)
+	elif status eq "Attach T&Cs": processAttachTnC(jira,issue)
+	else :
 		print("Issue "+"|".join([key,status,assignee]))
 
 #	assignee=str(issue.fields.assignee)
